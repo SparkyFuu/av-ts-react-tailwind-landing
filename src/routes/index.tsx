@@ -5,6 +5,7 @@ import About from "../pages/About/About";
 import Home from "../pages/Home/Home";
 import Skills from "../pages/Skills/Skills";
 import WorkExperience from "../pages/Work-Experience/WorkExperience";
+import Portfolio from "../pages/Portfolio/Portfolio";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes: React.FC = () => {
         <About />
         <Skills />
         <WorkExperience />
+        <Portfolio />
       </Layout>
     </Router>
   );

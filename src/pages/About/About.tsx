@@ -43,11 +43,6 @@ const AboutMe = () => {
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
-                <strong className="mr-2">Teléfono:</strong>
-                <span>+569 3354 4720</span>
-              </li>
-              <li className="flex items-center text-white">
-                <FaChevronRight color="#4ade80" className="mr-2" />
                 <strong className="mr-2">Ciudad:</strong>
                 <span>Santiago, Chile</span>
               </li>
@@ -56,7 +51,9 @@ const AboutMe = () => {
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
                 <strong className="mr-2">Email:</strong>
-                <span>contacto@alejandrovgallardo.com</span>
+                <a href="mailto:djehjjkf@gmail.com" className="text-white">
+                  <span>contacto@alejandrovgallardo.com</span>
+                </a>
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />

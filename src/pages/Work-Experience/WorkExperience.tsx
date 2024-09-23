@@ -42,7 +42,6 @@ const experiences = [
       "Desarrollo front-end: React, Redux, TypeScript",
       "Desarrollo back-end: Java Spring",
       "Base de datos: PostgreSQL",
-      "DevOps: Docker",
     ],
     dates: "OCTUBRE 2023 - ACTUALIDAD",
     imageUrl: "/images/evolbanner.png",
