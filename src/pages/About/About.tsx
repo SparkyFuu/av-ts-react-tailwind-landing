@@ -20,7 +20,7 @@ const AboutMe = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
         <div className="lg:col-span-4" data-aos="fade-right">
           <img
-            src="../src/assets/me.jpg"
+            src="../public/assets/me.jpg"
             alt=""
             className="w-full h-auto rounded shadow-lg"
           />
