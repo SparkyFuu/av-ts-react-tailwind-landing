@@ -12,7 +12,7 @@ const AboutMe = () => {
   return (
     <section id="about" className="px-6 py-12 md:px-12 lg:px-28 lg:py-16">
       <div className="flex justify-center items-center gap-4 text-white">
-        <FaPerson size={40} className="animate-bounce" />
+        <FaPerson size={40} className="hover:animate-bounce" />
         <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
           Acerca de mí
         </h2>
@@ -33,18 +33,18 @@ const AboutMe = () => {
             <ul className="space-y-4 md:space-y-9">
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
-                <strong className="mr-2">Nacimiento:</strong>
-                <span>25 Dic 2002</span>
+                <strong className="mr-2">Nombre:</strong>
+                <span>Alejandro Valenzuela</span>
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
-                <strong className="mr-2">Website:</strong>
-                <span>www.alejandrovgallardo.com</span>
+                <strong className="mr-2">Stack:</strong>
+                <span>React, NodeJs, NextJs, TypeScript</span>
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
                 <strong className="mr-2">Teléfono:</strong>
-                <span>+569 5486 2744</span>
+                <span>+569 3354 4720</span>
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
@@ -53,16 +53,6 @@ const AboutMe = () => {
               </li>
             </ul>
             <ul className="space-y-4 md:space-y-9">
-              <li className="flex items-center text-white">
-                <FaChevronRight color="#4ade80" className="mr-2" />
-                <strong className="mr-2">Edad:</strong>
-                <span>21</span>
-              </li>
-              <li className="flex items-center text-white">
-                <FaChevronRight color="#4ade80" className="mr-2" />
-                <strong className="mr-2">Grade:</strong>
-                <span>Junior</span>
-              </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
                 <strong className="mr-2">Email:</strong>
@@ -75,35 +65,36 @@ const AboutMe = () => {
               </li>
             </ul>
           </div>
-          <p className="mt-2 text-white">
+          <p className="mt-4 text-white text-justify">
             Soy un desarrollador front-end apasionado por la creación de sitios
             web atractivos y funcionales, con un sólido historial en la
             implementación de diseños responsivos y la integración de
-            tecnologías modernas como HTML5, CSS3 y JavaScript. He trabajado en
-            una amplia gama de proyectos, desde sitios web simples hasta
-            aplicaciones web complejas, siempre enfocado en brindar soluciones
-            innovadoras y eficientes.
+            tecnologías modernas como HTML5, CSS3 y JavaScript/TypeScript. He
+            trabajado en una amplia gama de proyectos, desde sitios web simples
+            hasta aplicaciones web complejas, siempre enfocado en brindar
+            soluciones innovadoras y eficientes.
           </p>
 
-          <p className="mt-2 text-white">
+          <p className="mt-2 text-white text-justify">
             Tengo experiencia en el uso de frameworks y librerías populares como
-            Bootstrap y jQuery, y también he desarrollado habilidades en la
-            programación del lado del servidor con PHP. Además, he ampliado mi
-            expertise al trabajar con React y TypeScript para el desarrollo de
-            interfaces de usuario dinámicas y escalables.
+            Tailwind, ChakraUi, Shadcn, Bootstrap, y también he desarrollado
+            habilidades en la programación del lado del servidor con PHP,
+            NextJs, Además, he ampliado mi expertise al trabajar con React y
+            TypeScript para el desarrollo de interfaces de usuario dinámicas y
+            escalables.
           </p>
 
           {showMore && (
             <>
-              <p className="mt-2 text-white">
+              <p className="mt-2 text-white text-justify">
                 En el ámbito del backend, tengo experiencia con Java Spring, lo
-                que me permite crear aplicaciones robustas y seguras. También
-                soy competente en la gestión de bases de datos, específicamente
-                con PostgreSQL, lo que garantiza una integración fluida y
-                eficiente de los datos en mis proyectos.
+                que me permite crear aplicaciones robustas. También soy
+                competente en la gestión de bases de datos, específicamente con
+                PostgreSQL, lo que garantiza una integración fluida y eficiente
+                de los datos en mis proyectos.
               </p>
 
-              <p className="mt-2 text-white">
+              <p className="mt-2 text-white text-justify">
                 Me mantengo al tanto de las últimas tendencias en diseño y
                 desarrollo web para ofrecer siempre las mejores soluciones a mis
                 clientes, combinando creatividad y tecnología para crear

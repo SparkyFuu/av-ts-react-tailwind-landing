@@ -50,7 +50,7 @@ const Skills = () => {
     >
       <div className="text-center mb-10">
         <div className="flex justify-center items-center gap-4 text-white">
-          <FaBrain size={40} className="animate-bounce" />
+          <FaBrain size={40} className="hover:animate-bounce" />
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
             Habilidades
           </h2>
@@ -60,7 +60,7 @@ const Skills = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:portrait:grid-cols-2 lg:landscape:grid-cols-4 gap-8 md:gap-12">
         {Object.entries(skills).map(([category, skillList], index) => (
           <div key={category} className="bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3

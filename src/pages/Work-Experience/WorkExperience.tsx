@@ -71,13 +71,13 @@ const WorkExperience = () => {
     <section id="workEx" className="px-6 py-12 md:px-12 lg:px-28 lg:py-16">
       <div className="text-center mb-10">
         <div className="flex justify-center items-center gap-4 text-white">
-          <FaGlobe size={40} className="animate-bounce" />
+          <FaGlobe size={40} className="hover:animate-bounce" />
           <h2 className="text-4xl font-bold uppercase tracking-wide">
             Experiencia Laboral
           </h2>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:portrait:grid-cols-2 lg:landscape:grid-cols-4 gap-8 md:gap-12">
         {experiences.map((exp, index) => (
           <div
             key={index}
