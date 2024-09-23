@@ -37,7 +37,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-5 home-social-icons">
-        <a href="https://wa.me/954862744" target="_blank">
+        <a href="https://wa.me/" target="_blank">
           <FaWhatsapp className="text-white text-2xl" />
         </a>
         <a href="https://www.instagram.com/_spark.02_/" target="_blank">

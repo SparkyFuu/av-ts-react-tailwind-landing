@@ -16,7 +16,7 @@ const Navbar = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+      setIsMenuOpen(false); // Close the menu on mobile devices
     }
   };
 
