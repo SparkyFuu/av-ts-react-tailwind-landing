@@ -2,6 +2,7 @@ import {
   FaChevronDown,
   FaGithub,
   FaInstagram,
+  FaLinkedin,
   FaUser,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -45,6 +46,12 @@ const Home = () => {
         </a>
         <a href="https://github.com/SparkyFuu" target="_blank">
           <FaGithub className="text-white text-2xl" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/alejandro-valenzuela-8780442a1/"
+          target="_blank"
+        >
+          <FaLinkedin className="text-white text-2xl" />
         </a>
         <a>
           <FaUser className="text-white text-2xl" />
