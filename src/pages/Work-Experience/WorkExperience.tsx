@@ -40,7 +40,7 @@ const experiences = [
       "Actualmente trabajo en Evol Services, una empresa del sector energético, como desarrollador junior full stack. Me encargo del desarrollo de aplicaciones web utilizando React para el front-end y Java Spring para el backend. Trabajo en estrecha colaboración con los equipos de ingeniería para implementar soluciones innovadoras que mejoren la eficiencia operativa de la empresa.",
     stack: [
       "Desarrollo front-end: React, Redux, TypeScript",
-      "Desarrollo back-end: Java Spring",
+      "Desarrollo back-end: Java Spring, NestJs, Seuquelice",
       "Base de datos: PostgreSQL",
     ],
     dates: "OCTUBRE 2023 - ACTUALIDAD",
