@@ -11,6 +11,8 @@ const Skills = () => {
     webFrameworks: [
       { name: "React", level: 4 },
       { name: "Angular", level: 2 },
+      { name: "NextJs", level: 4 },
+      { name: "NestJs", level: 3 },
     ],
     miscelaneo: [
       { name: "Windows", level: 4 },
@@ -19,7 +21,6 @@ const Skills = () => {
     otras: [
       { name: "Microsoft Office", level: 2 },
       { name: "Adobe Photoshop", level: 3 },
-      { name: "Blender", level: 2 },
     ],
   };
 
