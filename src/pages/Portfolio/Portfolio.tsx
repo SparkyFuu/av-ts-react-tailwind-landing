@@ -61,6 +61,14 @@ const portfolioData = [
     category: "filter-web",
     link: "https://comunidad-hispano.com",
   },
+  {
+    title: "Reminder Glossary",
+    description:
+      "Desarrollo página web con tecnologias tales como, react, nextJs, tailwind, shadcn.",
+    image: "/images/reminderglosaryphoto.jpg",
+    category: "filter-web",
+    link: "https://reminderglossary.com",
+  },
 ];
 
 const Portfolio: React.FC = () => {
