@@ -70,7 +70,7 @@ const Navbar = () => {
               <a
                 href="#home"
                 onClick={(e) => scrollToSection(e, "home")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page"
               >
                 Inicio
@@ -80,7 +80,7 @@ const Navbar = () => {
               <a
                 href="#about"
                 onClick={(e) => scrollToSection(e, "about")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Acerca
               </a>
@@ -89,7 +89,7 @@ const Navbar = () => {
               <a
                 href="#skills"
                 onClick={(e) => scrollToSection(e, "skills")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Habilidades
               </a>
@@ -98,7 +98,7 @@ const Navbar = () => {
               <a
                 href="#workEx"
                 onClick={(e) => scrollToSection(e, "workEx")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Experiencia
               </a>
