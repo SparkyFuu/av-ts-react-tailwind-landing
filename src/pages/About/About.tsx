@@ -20,7 +20,7 @@ const AboutMe = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
         <div className="lg:col-span-4" data-aos="fade-right">
           <img
-            src="/images/me.jpg"
+            src="/images/menew.jpg"
             alt=""
             className="w-full h-auto rounded shadow-lg"
           />
@@ -39,7 +39,7 @@ const AboutMe = () => {
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
                 <strong className="mr-2">Stack:</strong>
-                <span>React, NodeJs, NextJs, TypeScript</span>
+                <span>React, NodeJs, NestJs, TypeScript</span>
               </li>
               <li className="flex items-center text-white">
                 <FaChevronRight color="#4ade80" className="mr-2" />
@@ -63,39 +63,31 @@ const AboutMe = () => {
             </ul>
           </div>
           <p className="mt-4 text-white text-justify">
-            Soy un desarrollador front-end apasionado por la creación de sitios
-            web atractivos y funcionales, con un sólido historial en la
-            implementación de diseños responsivos y la integración de
-            tecnologías modernas como HTML5, CSS3 y JavaScript/TypeScript. He
-            trabajado en una amplia gama de proyectos, desde sitios web simples
-            hasta aplicaciones web complejas, siempre enfocado en brindar
-            soluciones innovadoras y eficientes.
+            Soy un desarrollador full stack apasionado por la creación de
+            soluciones web integrales y robustas, con un sólido historial en el
+            diseño e implementación de aplicaciones escalables y eficientes. He
+            trabajado en proyectos que van desde sistemas sencillos hasta
+            plataformas complejas, siempre enfocado en brindar soluciones
+            innovadoras que combinan lo mejor del front-end y el back-end.
           </p>
 
           <p className="mt-2 text-white text-justify">
-            Tengo experiencia en el uso de frameworks y librerías populares como
-            Tailwind, ChakraUi, Shadcn, Bootstrap, y también he desarrollado
-            habilidades en la programación del lado del servidor con PHP,
-            NextJs, Además, he ampliado mi expertise al trabajar con React y
-            TypeScript para el desarrollo de interfaces de usuario dinámicas y
-            escalables.
+            En el front-end, me especializo en React para desarrollar interfaces
+            de usuario dinámicas y responsivas, ofreciendo experiencias modernas
+            y atractivas. En el back-end, cuento con amplia experiencia
+            utilizando NestJS y Java Spring, lo que me permite crear
+            aplicaciones seguras y de alto rendimiento. Además, manejo ORMs como
+            seuquelice y TypeORM para optimizar la integración y gestión de
+            bases de datos.
           </p>
 
           {showMore && (
             <>
               <p className="mt-2 text-white text-justify">
-                En el ámbito del backend, tengo experiencia con Java Spring, lo
-                que me permite crear aplicaciones robustas. También soy
-                competente en la gestión de bases de datos, específicamente con
-                PostgreSQL, lo que garantiza una integración fluida y eficiente
-                de los datos en mis proyectos.
-              </p>
-
-              <p className="mt-2 text-white text-justify">
-                Me mantengo al tanto de las últimas tendencias en diseño y
-                desarrollo web para ofrecer siempre las mejores soluciones a mis
-                clientes, combinando creatividad y tecnología para crear
-                experiencias web excepcionales.
+                Me mantengo actualizado con las últimas tendencias en tecnología
+                y desarrollo, lo que me permite ofrecer soluciones que se
+                adaptan a las necesidades actuales de mis clientes y garantizan
+                experiencias digitales excepcionales.
               </p>
             </>
           )}
