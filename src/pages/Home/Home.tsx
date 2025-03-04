@@ -6,7 +6,7 @@ import {
   FaUser,
   FaWhatsapp,
 } from "react-icons/fa";
-import "./home.css";
+import "./Home.css";
 
 const Home = () => {
   const scrollToNextSection = () => {
