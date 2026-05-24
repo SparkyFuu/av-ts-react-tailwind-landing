@@ -1,198 +1,444 @@
-import React, { useEffect, useRef, useState } from "react";
-import Isotope from "isotope-layout";
-import GLightbox from "glightbox";
-import "glightbox/dist/css/glightbox.min.css";
-import { FaBriefcase, FaLink } from "react-icons/fa";
+import React, { useMemo, useState } from "react";
+import { FaChevronDown, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
-const portfolioData = [
+type ProjectType = "web" | "app" | "backend";
+
+const projects: Array<{
+  title: string;
+  description: string;
+  image: string;
+  type: ProjectType;
+  link?: string;
+  links?: Array<{ label: string; href: string }>;
+  repo?: string;
+  stack: string[];
+  impact: string;
+}> = [
   {
-    title: "UptoLimitGym",
+    title: "EnergyAsset Web Multi-Mercado",
     description:
-      "UptoLimitGym App de escritorio, mantenedor de usuarios simple, programada en Java y MySQL.",
-    image: "/images/portfolio-1.jpg",
-    category: "filter-app",
-    link: "",
+      "Ecosistema de paginas comerciales para EnergyAsset desplegado por mercado, con builds separados, dominios por pais y automatizacion de deploy via SSH/rsync.",
+    image: "/images/evolbanner.png",
+    type: "web",
+    repo: "https://github.com/SparkyFuu/ts-react-front-ea",
+    links: [
+      { label: "CL", href: "https://energyasset.cl" },
+      { label: "ES", href: "https://energyasset.es" },
+      { label: "AR", href: "https://energyasset.com.ar" },
+      { label: "PE", href: "https://energyasset.pe" },
+      { label: "PA", href: "https://www.energyasset.com.pa" },
+      { label: "GT", href: "https://energyasset.com.gt" },
+      { label: "DO", href: "https://energyasset.com.do" },
+      { label: "CO", href: "https://energyasset.co" },
+    ],
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind",
+      "Recharts",
+      "react-slick",
+      "GLightbox",
+      "Isotope",
+      "SSH deploy",
+    ],
+    impact: "Una base front desplegada para multiples paises y dominios.",
   },
   {
-    title: "EntrenandoConDiego",
+    title: "EnergyAsset Backend Serverless",
     description:
-      "Desarrollo página web de contacto para entrenador de gimnasio, programada en HTML, CSS, JavaScript, Bootstrap.",
-    image: "/images/portfolio-2.jpg",
-    category: "filter-web",
-    link: "https://entrenandocondiego.pages.dev",
+      "Backend NestJS para EnergyAsset desplegable con Serverless Framework, preparado para Lambda/API Gateway, archivos, colas, secretos, correo, reportes y datos relacionales.",
+    image: "/images/portfolio-9.jpg",
+    type: "backend",
+    repo: "https://github.com/SparkyFuu/sls-aws-nest-backend-ea",
+    stack: [
+      "NestJS 11",
+      "AWS Lambda",
+      "S3",
+      "SQS",
+      "Secrets Manager",
+      "SendGrid",
+      "PostgreSQL",
+      "Sequelize",
+      "JWT",
+      "Jest",
+    ],
+    impact: "API cloud con autenticacion, archivos, colas y reporteria.",
   },
   {
-    title: "UptoLimitGym 2.0",
+    title: "EnergyAsset Software",
     description:
-      "UptoLimitGym 2.0 App de escritorio, mantenedor de usuarios (clientes y entrenadores), generador de informes de ventas y informes personales de los clientes del gimnasio, programado en Java y MySQL.",
-    image: "/images/portfolio-3.jpg",
-    category: "filter-app",
-    link: "",
+      "Software web para operacion EnergyAsset, construido como aplicacion React moderna con gestion de estado, reportes PDF, drag and drop, dashboards y consumo de APIs por ambiente.",
+    image: "/images/portfolio-8.jpg",
+    type: "web",
+    link: "https://tups.cl",
+    repo: "https://github.com/SparkyFuu/ts-react-front-sw-ea",
+    stack: [
+      "React 19",
+      "TypeScript 5.9",
+      "Vite 7",
+      "Redux Toolkit",
+      "Redux Persist",
+      "Radix UI",
+      "Tailwind 4",
+      "Recharts",
+      "React PDF",
+      "dnd-kit",
+      "Axios",
+      "JWT",
+    ],
+    impact: "Herramienta interna enfocada en operacion y datos.",
   },
   {
-    title: "Bar88",
+    title: "EnergyAsset Front España",
     description:
-      "Desarrollo página web de contacto y reservas para Restobar, programada en HTML, CSS, JavaScript, Bootstrap, jQuery y PHP.",
-    image: "/images/bar88-details-1.jpg",
-    category: "filter-web",
-    link: "https://Bar88.cl",
+      "Frontend/landing para la operacion de EnergyAsset en Espana, construido sobre React, TypeScript y Vite con componentes visuales, carruseles y visualizacion de informacion.",
+    image: "/images/portfolio-5.jpg",
+    type: "web",
+    repo: "https://github.com/SparkyFuu/ts-react-front-ea-esp",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind",
+      "Recharts",
+      "react-slick",
+      "GLightbox",
+      "Isotope",
+    ],
+    impact: "Presencia web especializada para mercado Espana.",
   },
   {
-    title: "Hqs Consultores",
+    title: "SEF Landing",
     description:
-      "Desarrollo página web de contacto y informaciones para empresa de contadores auditores, programada en HTML, CSS, JavaScript, Bootstrap, jQuery y PHP.",
-    image: "/images/hqsconsultores-details-1.jpg",
-    category: "filter-web",
-    link: "https://hqsconsultores.cl",
+      "Landing multilenguaje para SEF con deteccion de idioma, traducciones via i18next, secciones visuales, charts y experiencia responsive.",
+    image: "/images/portfolio-6.jpg",
+    type: "web",
+    link: "https://santiagoeconomicforum.com",
+    repo: "https://github.com/SparkyFuu/ts-react-landing-sef",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind",
+      "i18next",
+      "react-i18next",
+      "Recharts",
+      "react-slick",
+    ],
+    impact: "Landing internacionalizable con contenido dinamico.",
   },
   {
-    title: "Taller DyP FenixSpa",
+    title: "EnergyAsset Management Software",
     description:
-      "Desarrollo página web de contacto y informaciones para empresa de desaboladura y pintura, programada en HTML, CSS, JavaScript, Bootstrap, jQuery y PHP.",
-    image: "/images/portfolio-4.jpg",
-    category: "filter-web",
-    link: "https://tallerdypfenixspa.cl",
+      "Aplicacion de gestion para EnergyAsset Management, con arquitectura frontend moderna, componentes reutilizables, autenticacion, persistencia de estado y flujos pensados para trabajo diario.",
+    image: "/images/portfolio-7.jpg",
+    type: "web",
+    repo: "https://github.com/SparkyFuu/ts-react-front-sw-eam",
+    stack: [
+      "React 19",
+      "TypeScript 5.9",
+      "Vite 7",
+      "Redux Toolkit",
+      "Redux Persist",
+      "Radix UI",
+      "Tailwind 4",
+      "Recharts",
+      "Axios",
+      "JWT",
+    ],
+    impact: "Software de gestion para procesos internos.",
+  },
+  {
+    title: "EnergyAsset Management Web",
+    description:
+      "Pagina web corporativa de EnergyAsset Management, creada para presentar servicios, confianza comercial y contacto de manera clara y responsive.",
+    image: "/images/portfolio-5.jpg",
+    type: "web",
+    link: "https://eam.capital",
+    repo: "https://github.com/SparkyFuu/ts-react-landing-eam",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind",
+      "react-slick",
+      "GLightbox",
+      "Isotope",
+    ],
+    impact: "Landing corporativa para posicionamiento y conversion.",
+  },
+  {
+    title: "Hermes Pisos",
+    description:
+      "Sitio comercial para Hermes Pisos, orientado a mostrar servicios, generar confianza y transformar visitas en solicitudes de contacto.",
+    image: "/images/portfolio-5.jpg",
+    type: "web",
+    link: "https://hermespisos.cl",
+    repo: "https://github.com/SparkyFuu/ts-react-landing-hermes",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind",
+      "react-slick",
+      "GLightbox",
+      "Isotope",
+      "SEO",
+    ],
+    impact: "Web de servicios con foco comercial y responsive.",
+  },
+  {
+    title: "Servidor FiveM RP S8",
+    description:
+      "Programacion de servidor FiveM roleplay para Comunidad Hispano, con scripts de gameplay, logica de servidor, recursos y personalizacion de experiencia in-game.",
+    image: "/images/hispanobanner.png",
+    type: "app",
+    link: "https://comunidad-hispano.com",
+    repo: "https://github.com/fsandov/ch-fivem-rp-s8",
+    stack: ["FiveM", "Lua", "Server scripts", "Client scripts", "RP systems"],
+    impact: "Desarrollo de sistemas jugables y logica de servidor.",
+  },
+  {
+    title: "Hegemonik Backend Serverless",
+    description:
+      "API NestJS preparada para AWS Lambda con integraciones S3/SQS, JWT, PostgreSQL, Sequelize, procesamiento de CSV/Excel y scripts de deploy por stage.",
+    image: "/images/portfolio-9.jpg",
+    type: "backend",
+    repo: "https://github.com/SparkyFuu/sls-aws-nest-backend-hegemonik",
+    stack: ["NestJS", "AWS Lambda", "S3", "SQS", "PostgreSQL"],
+    impact: "Arquitectura backend lista para operar en cloud.",
+  },
+  {
+    title: "Front TUPS",
+    description:
+      "Frontend React moderno con Redux Toolkit, Radix UI, Tailwind 4, Recharts, persistencia de estado y consumo de APIs protegidas.",
+    image: "/images/portfolio-8.jpg",
+    type: "web",
+    link: "https://tups.cl",
+    repo: "https://github.com/SparkyFuu/ts-react-front-tups",
+    stack: ["React 19", "Redux", "Radix", "Recharts", "Tailwind"],
+    impact: "Dashboard y flujos internos con componentes reutilizables.",
+  },
+  {
+    title: "Front Hegemonik",
+    description:
+      "Aplicacion React con visualizacion de datos, HLS para video, tus-js-client para cargas resumibles, auth y una base UI orientada a producto.",
+    image: "/images/portfolio-7.jpg",
+    type: "web",
+    link: "https://hegemonik.com",
+    repo: "https://github.com/SparkyFuu/ts-react-front-hegemonic",
+    stack: ["React", "HLS", "TUS Upload", "Redux", "Radix"],
+    impact: "Manejo de media, upload y estado de aplicacion.",
   },
   {
     title: "Comunidad Hispano",
     description:
-      "Desarrollo página web con tecnologias tales como, react, nextJs, tailwind, shadcn.",
+      "Plataforma web para comunidad de videojuegos con React, Next.js, Tailwind, shadcn y autenticacion moderna.",
     image: "/images/portfolio-6.jpg",
-    category: "filter-web",
+    type: "web",
     link: "https://comunidad-hispano.com",
+    stack: ["Next.js", "React", "Tailwind", "shadcn", "NextAuth"],
+    impact: "Experiencia comunitaria con identidad visual y acceso seguro.",
   },
   {
     title: "Reminder Glossary",
     description:
-      "Desarrollo página web con tecnologias tales como, react, nextJs, tailwind, shadcn.",
+      "Sitio web construido con React/Next, Tailwind y shadcn, orientado a una experiencia clara, responsive y mantenible.",
     image: "/images/reminderglosaryphoto.jpg",
-    category: "filter-web",
+    type: "web",
     link: "https://reminderglossary.com",
+    stack: ["React", "Next.js", "Tailwind", "shadcn"],
+    impact: "Producto web simple con buen polish visual.",
+  },
+  {
+    title: "HQS Consultores",
+    description:
+      "Sitio corporativo para consultores auditores, trabajado con foco en informacion clara, contacto, SEO y performance.",
+    image: "/images/hqsconsultores-details-1.jpg",
+    type: "web",
+    link: "https://hqsconsultores.cl",
+    stack: ["React", "Bootstrap", "SEO", "Lighthouse"],
+    impact: "Presencia digital profesional para servicios B2B.",
+  },
+  {
+    title: "Bar88",
+    description:
+      "Pagina de contacto y reservas para restobar, con interfaz directa para conversion y estructura pensada para usuarios moviles.",
+    image: "/images/bar88-details-1.jpg",
+    type: "web",
+    link: "https://Bar88.cl",
+    stack: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP"],
+    impact: "Reservas y contacto con baja friccion.",
+  },
+  {
+    title: "UptoLimitGym 2.0",
+    description:
+      "Aplicacion de escritorio para gimnasio con mantenedores de clientes y entrenadores, informes de ventas e informes personales.",
+    image: "/images/portfolio-3.jpg",
+    type: "app",
+    stack: ["Java", "MySQL", "Reportes", "Desktop"],
+    impact: "Gestion operacional para gimnasio.",
+  },
+  {
+    title: "Taller DyP FenixSpa",
+    description:
+      "Sitio de contacto e informacion para empresa de desabolladura y pintura, construido para convertir busquedas locales en clientes.",
+    image: "/images/portfolio-4.jpg",
+    type: "web",
+    link: "https://tallerdypfenixspa.cl",
+    stack: ["React", "Bootstrap", "SEO", "Responsive"],
+    impact: "Web comercial enfocada en confianza y contacto.",
   },
 ];
 
+const filters: Array<{ label: string; value: ProjectType | "all" }> = [
+  { label: "Todo", value: "all" },
+  { label: "Web", value: "web" },
+  { label: "Backend", value: "backend" },
+  { label: "Apps", value: "app" },
+];
+
 const Portfolio: React.FC = () => {
-  const [filterKey, setFilterKey] = useState<string>("*");
-  const isotope = useRef<Isotope | null>(null);
+  const [activeFilter, setActiveFilter] = useState<ProjectType | "all">("all");
+  const [openLinksFor, setOpenLinksFor] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (document.querySelector(".portfolio-container")) {
-      isotope.current = new Isotope(".portfolio-container", {
-        itemSelector: ".portfolio-item",
-        layoutMode: "fitRows",
-      });
+  const visibleProjects = useMemo(() => {
+    if (activeFilter === "all") {
+      return projects;
     }
 
-    return () => {
-      isotope.current?.destroy();
-    };
-  }, []);
+    return projects.filter((project) => project.type === activeFilter);
+  }, [activeFilter]);
 
-  useEffect(() => {
-    if (isotope.current) {
-      isotope.current.arrange({ filter: filterKey });
-    }
-  }, [filterKey]);
-
-  useEffect(() => {
-    const lightbox = GLightbox({
-      selector: ".portfolio-lightbox",
-    });
-
-    const detailsLightbox = GLightbox({
-      selector: ".portfolio-details-lightbox",
-      width: "90%",
-      height: "90vh",
-    });
-
-    return () => {
-      lightbox.destroy();
-      detailsLightbox.destroy();
-    };
-  }, []);
-
-  const handleFilterKeyChange = (key: string) => () => {
-    setFilterKey(key);
-  };
-
-  
   return (
-    <section id="portfolio" className="text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <div className="flex justify-center items-center gap-4 text-white">
-            <FaBriefcase size={40} className="hover:animate-bounce" />
-            <h2 className="text-4xl font-bold uppercase tracking-wide">
-              Portafolio
+    <section id="portfolio" className="bg-[#071013] px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#34d399]">
+              Proyectos
+            </p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-black text-white sm:text-5xl">
+              Evidencia concreta: clientes, dashboards, backend cloud y apps.
             </h2>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {filters.map((filter) => (
+              <button
+                key={filter.value}
+                type="button"
+                onClick={() => setActiveFilter(filter.value)}
+                className={`rounded-md px-4 py-2 text-sm font-bold transition ${
+                  activeFilter === filter.value
+                    ? "bg-[#34d399] text-[#071013]"
+                    : "border border-white/10 bg-white/[0.05] text-slate-200 hover:border-[#34d399]/40"
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="flex justify-center mb-8">
-          <ul className="flex space-x-3 bg-white/10 px-4 py-2 rounded-full">
-            <li
-              className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase ${
-                filterKey === "*"
-                  ? "bg-[#4ade80] text-white"
-                  : "bg-white/10 text-gray-300 hover:bg-[#4ade80] hover:text-white"
-              } rounded-md transition-colors duration-300`}
-              onClick={handleFilterKeyChange("*")}
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {visibleProjects.map((project) => (
+            <article
+              key={project.title}
+              className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]"
             >
-              Todo
-            </li>
-            <li
-              className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase ${
-                filterKey === ".filter-app"
-                  ? "bg-[#4ade80] text-white"
-                  : "bg-white/10 text-gray-300 hover:bg-[#4ade80] hover:text-white"
-              } rounded-md transition-colors duration-300`}
-              onClick={handleFilterKeyChange(".filter-app")}
-            >
-              Apps
-            </li>
-            <li
-              className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase ${
-                filterKey === ".filter-web"
-                  ? "bg-[#4ade80] text-white"
-                  : "bg-white/10 text-gray-300 hover:bg-[#4ade80] hover:text-white"
-              } rounded-md transition-colors duration-300`}
-              onClick={handleFilterKeyChange(".filter-web")}
-            >
-              Webs
-            </li>
-          </ul>
-        </div>
-
-        <div className="portfolio-container flex flex-wrap -mx-4">
-          {portfolioData.map((item, index) => (
-            <div
-              key={index}
-              className={`portfolio-item w-full md:w-1/2 lg:w-1/3 px-4 mb-8 ${item.category}`}
-            >
-              <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-800 transition-transform transform hover:scale-105">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-64 object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-                  <p className="text-white text-sm">{item.description}</p>
-                  <div className="mt-4 flex space-x-2">
-                    {item.link != "" && (
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
+                <span className="absolute left-4 top-4 rounded-md bg-[#071013]/85 px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#34d399]">
+                  {project.type}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-2xl font-black text-white">
+                    {project.title}
+                  </h3>
+                  <div className="flex gap-2">
+                    {project.repo && (
                       <a
-                        href={item.link}
-                        className="text-white text-2xl"
-                        title="Portfolio Details"
+                        href={project.repo}
                         target="_blank"
+                        rel="noopener noreferrer"
+                        className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                        aria-label={`Repositorio de ${project.title}`}
                       >
-                        <FaLink />
+                        <FaGithub />
+                      </a>
+                    )}
+                    {project.links && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setOpenLinksFor((current) =>
+                              current === project.title ? null : project.title
+                            )
+                          }
+                          className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                          aria-label={`Ver opciones de ${project.title}`}
+                          aria-expanded={openLinksFor === project.title}
+                        >
+                          <FaChevronDown />
+                        </button>
+                        {openLinksFor === project.title && (
+                          <div className="absolute right-0 top-12 z-20 w-48 rounded-md border border-white/10 bg-[#071013] p-2 shadow-2xl shadow-black/40">
+                            {project.links.map((link) => (
+                              <a
+                                key={link.href}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-bold text-slate-200 transition hover:bg-white/10 hover:text-[#34d399]"
+                              >
+                                <span>{link.label}</span>
+                                <FaExternalLinkAlt className="text-xs" />
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                        aria-label={`Abrir ${project.title}`}
+                      >
+                        <FaExternalLinkAlt />
                       </a>
                     )}
                   </div>
                 </div>
+                <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-[#f97316]">
+                  {project.impact}
+                </p>
+                <p className="mt-4 leading-7 text-slate-300">
+                  {project.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md bg-[#0b1718] px-3 py-2 text-sm text-slate-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

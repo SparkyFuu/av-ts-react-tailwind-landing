@@ -1,111 +1,95 @@
 import { useState } from "react";
-import { FaCode } from "react-icons/fa";
+import { FaBars, FaCode, FaGithub, FaTimes } from "react-icons/fa";
+
+const links = [
+  { label: "Inicio", id: "home" },
+  { label: "Perfil", id: "about" },
+  { label: "Stack", id: "skills" },
+  { label: "Experiencia", id: "workEx" },
+  { label: "Proyectos", id: "portfolio" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   const scrollToSection = (
     event: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
     event.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
   };
 
   return (
-    <nav className="bg-[#090029] fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/85 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a
           href="#home"
-          onClick={(e) => scrollToSection(e, "home")}
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          onClick={(event) => scrollToSection(event, "home")}
+          className="flex items-center gap-3 text-slate-50"
+          aria-label="Ir al inicio"
         >
-          <FaCode className="text-4xl text-[#4ade80]" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            Alejandro Valenzuela
+          <span className="grid h-10 w-10 place-items-center rounded-md border border-[#34d399]/40 bg-[#34d399]/10 text-[#34d399]">
+            <FaCode />
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-semibold uppercase tracking-[0.28em] text-[#34d399]">
+              SparkyFuu
+            </span>
+            <span className="block text-base font-bold">Alejandro V.</span>
           </span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-sticky"
-            aria-expanded={isMenuOpen}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
+
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(event) => scrollToSection(event, link.id)}
+              className="text-sm font-medium text-slate-300 transition hover:text-[#34d399]"
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="https://github.com/SparkyFuu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-white/5 text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+            aria-label="GitHub de Alejandro"
+          >
+            <FaGithub />
+          </a>
         </div>
-        <div
-          className={`items-center justify-between ${
-            isMenuOpen ? "block" : "hidden"
-          } w-full md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
+
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen((value) => !value)}
+          className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-white/5 text-slate-100 md:hidden"
+          aria-label="Abrir menu"
+          aria-expanded={isMenuOpen}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-[#090029] md:dark:bg-[#090029] dark:border-gray-700">
-            <li>
-              <a
-                href="#home"
-                onClick={(e) => scrollToSection(e, "home")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
-              >
-                Inicio
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => scrollToSection(e, "about")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Acerca
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                onClick={(e) => scrollToSection(e, "skills")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Habilidades
-              </a>
-            </li>
-            <li>
-              <a
-                href="#workEx"
-                onClick={(e) => scrollToSection(e, "workEx")}
-                className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#4ade80] md:p-0 md:dark:hover:text-[#4ade80] text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Experiencia
-              </a>
-            </li>
-          </ul>
-        </div>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {isMenuOpen && (
+        <div className="border-t border-white/10 bg-[#071013] px-5 py-4 md:hidden">
+          <div className="flex flex-col gap-3">
+            {links.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(event) => scrollToSection(event, link.id)}
+                className="rounded-md px-3 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/5 hover:text-[#34d399]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,92 +1,115 @@
-import { FaBrain } from "react-icons/fa";
+import {
+  FaAws,
+  FaChartLine,
+  FaDatabase,
+  FaJava,
+  FaReact,
+  FaServer,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiNestjs,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
+const skillGroups = [
+  {
+    title: "Frontend productivo",
+    icon: <FaReact />,
+    color: "text-[#38bdf8]",
+    items: ["React", "Next.js", "TypeScript", "Tailwind", "Radix/shadcn"],
+  },
+  {
+    title: "Estado y datos",
+    icon: <SiRedux />,
+    color: "text-[#a78bfa]",
+    items: ["Redux Toolkit", "Axios", "Recharts", "JWT decode", "Forms"],
+  },
+  {
+    title: "Backend",
+    icon: <SiNestjs />,
+    color: "text-[#fb7185]",
+    items: ["NestJS", "Node.js", "JWT", "class-validator", "REST APIs"],
+  },
+  {
+    title: "Cloud y deploy",
+    icon: <FaAws />,
+    color: "text-[#f97316]",
+    items: ["AWS Lambda", "S3", "SQS", "Serverless", "CI-ready scripts"],
+  },
+  {
+    title: "Datos",
+    icon: <FaDatabase />,
+    color: "text-[#34d399]",
+    items: ["PostgreSQL", "Sequelize", "TypeORM", "SQL", "Excel/CSV"],
+  },
+  {
+    title: "Base tecnica",
+    icon: <FaJava />,
+    color: "text-[#facc15]",
+    items: ["Java Spring", "HTML/CSS", "Bootstrap", "GitHub", "SEO"],
+  },
+];
+
+const currentSignals = [
+  { icon: <SiTypescript />, label: "TypeScript como base" },
+  { icon: <SiTailwindcss />, label: "Tailwind y sistemas UI" },
+  { icon: <SiNextdotjs />, label: "NextAuth y Next.js" },
+  { icon: <FaChartLine />, label: "Dashboards y visualizacion" },
+  { icon: <FaServer />, label: "Servicios y APIs" },
+];
 
 const Skills = () => {
-  const skills = {
-    programacion: [
-      { name: "Java", level: 2 },
-      { name: "Python", level: 1 },
-      { name: "HTML / CSS", level: 4 },
-      { name: "JavaScript / TypeScript", level: 4 },
-    ],
-    webFrameworks: [
-      { name: "React", level: 4 },
-      { name: "Angular", level: 2 },
-      { name: "NextJs", level: 4 },
-      { name: "NestJs", level: 3 },
-    ],
-    miscelaneo: [
-      { name: "Windows", level: 4 },
-      { name: "SQL", level: 3 },
-    ],
-    otras: [
-      { name: "Microsoft Office", level: 2 },
-      { name: "Adobe Photoshop", level: 3 },
-    ],
-  };
-
-  const SkillBar: React.FC<{ level: number }> = ({ level }) => {
-    const totalDots = 4;
-    const activeDots = new Array(level).fill(true);
-    const inactiveDots = new Array(totalDots - level).fill(false);
-
-    return (
-      <div className="flex gap-1">
-        {activeDots.map((_, idx) => (
-          <div
-            key={idx}
-            className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg"
-          />
-        ))}
-        {inactiveDots.map((_, idx) => (
-          <div key={idx} className="w-3 h-3 bg-gray-600 rounded-full" />
-        ))}
-      </div>
-    );
-  };
-
   return (
-    <section
-      id="skills"
-      className="px-6 py-12 md:px-12 lg:px-28 lg:py-16 text-white rounded-lg"
-    >
-      <div className="text-center mb-10">
-        <div className="flex justify-center items-center gap-4 text-white">
-          <FaBrain size={40} className="hover:animate-bounce" />
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
-            Habilidades
-          </h2>
-        </div>
-        <p className="mt-4 text-gray-400 text-lg">
-          Explora mis habilidades y competencias
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:portrait:grid-cols-2 lg:landscape:grid-cols-4 gap-8 md:gap-12">
-        {Object.entries(skills).map(([category, skillList], index) => (
-          <div key={category} className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3
-              className={`text-2xl font-semibold mb-6 ${
-                [
-                  "text-green-400",
-                  "text-yellow-400",
-                  "text-blue-400",
-                  "text-pink-400",
-                ][index]
-              } border-b border-gray-700 pb-2`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </h3>
-            {skillList.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex justify-between items-center mb-4"
+    <section id="skills" className="bg-[#071013] px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#34d399]">
+              Stack
+            </p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-black text-white sm:text-5xl">
+              Skills demostrables por capas, desde UI hasta infraestructura.
+            </h2>
+          </div>
+          <div className="flex flex-wrap gap-2 md:max-w-md md:justify-end">
+            {currentSignals.map((signal) => (
+              <span
+                key={signal.label}
+                className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200"
               >
-                <span className="text-lg font-medium">{skill.name}</span>
-                <SkillBar level={skill.level} />
-              </div>
+                <span className="text-[#f97316]">{signal.icon}</span>
+                {signal.label}
+              </span>
             ))}
           </div>
-        ))}
+        </div>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {skillGroups.map((group) => (
+            <div
+              key={group.title}
+              className="rounded-lg border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-[#34d399]/40"
+            >
+              <div className="flex items-center gap-3">
+                <span className={`text-3xl ${group.color}`}>{group.icon}</span>
+                <h3 className="text-xl font-bold text-white">{group.title}</h3>
+              </div>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md bg-[#0b1718] px-3 py-2 text-sm font-medium text-slate-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

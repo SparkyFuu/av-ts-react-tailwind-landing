@@ -1,132 +1,123 @@
-import { FaGlobe, FaLinkedin } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const experiences = [
-  {
-    company: "Red de HQS",
-    role: "Desarrollador Front-End",
-    description:
-      "Ingresé como desarrollador front-end para trabajar en los sitios web de la red de HQS, desarrollando las páginas hqsconsultores.cl y bar88.cl. Ambas fueron desarrolladas utilizando React y Bootstrap, enfocándome en crear interfaces intuitivas y eficientes que mejoran la experiencia de usuario.",
-    stack: [
-      "Desarrollo front-end: React, Bootstrap, TypeScript, HTML, CSS",
-      "Optimización de rendimiento: Webpack, Lighthouse",
-      "Control de versiones: Git, GitHub",
-      "Implementación de SEO y accesibilidad web",
-    ],
-    dates: "ENERO 2023 - ABRIL 2023",
-    imageUrl: "/images/hqsbanner.png",
-    website: "https://hqsconsultores.cl",
-    linkedin: "#",
-  },
-  {
-    company: "Freelance",
-    role: "Desarrollador Web Freelance",
-    description:
-      "Trabajé como desarrollador web freelance, creando páginas web personalizadas para diferentes clientes. Desarrollé proyectos como tallerdypfenixspa.cl y entrenandocondiego.page.dev, además de varios sitios privados. Me especialicé en la creación de soluciones front-end a medida, proporcionando un diseño visual atractivo y funcionalidad avanzada.",
-    stack: [
-      "Desarrollo front-end: React, Bootstrap, Tailwind CSS, TypeScript",
-      "Diseño UI/UX: Adobe XD, Figma",
-      "Implementación de SEO y accesibilidad web",
-      "Integración de API REST",
-    ],
-    dates: "MAYO 2023 - OCTUBRE 2023",
-    imageUrl: "/images/freelancebanner.png",
-    website: "https://tallerdypfenixspa.cl",
-    linkedin: "#",
-  },
   {
     company: "Evol Services",
     role: "Desarrollador Junior Full Stack",
     description:
-      "Actualmente trabajo en Evol Services, una empresa del sector energético, como desarrollador junior full stack. Me encargo del desarrollo de aplicaciones web utilizando React para el front-end y Java Spring para el backend. Trabajo en estrecha colaboración con los equipos de ingeniería para implementar soluciones innovadoras que mejoren la eficiencia operativa de la empresa.",
-    stack: [
-      "Desarrollo front-end: React, Redux, TypeScript",
-      "Desarrollo back-end: Java Spring, NestJs, Seuquelice",
-      "Base de datos: PostgreSQL",
-    ],
-    dates: "OCTUBRE 2023 - ACTUALIDAD",
+      "Desarrollo de aplicaciones web para el sector energetico, conectando interfaces React con servicios backend en Java Spring y NestJS.",
+    stack: ["React", "Redux", "TypeScript", "Java Spring", "NestJS", "PostgreSQL"],
+    dates: "Octubre 2023 - Actualidad",
     imageUrl: "/images/evolbanner.png",
     website: "https://services.evol.energy",
-    linkedin: "#",
+    highlight: "Operacion interna, datos y eficiencia",
   },
   {
     company: "Comunidad Hispano",
     role: "Desarrollador Front-End",
     description:
-      "Trabajo de manera paralela como desarrollador front-end para Comunidad Hispano, una amplia comunidad de servidores de videojuegos. Desarrollo interfaces intuitivas y dinámicas utilizando tecnologías modernas como React, Tailwind CSS y Next.js, enfocándome en mejorar la experiencia de usuario y la seguridad de la autenticación con NextAuth.",
-    stack: [
-      "Desarrollo front-end: React, Tailwind CSS, Shadcn",
-      "Framework: Next.js",
-      "Autenticación: NextAuth",
-    ],
-    dates: "JULIO 2024 - ACTUALIDAD",
+      "Interfaces para una comunidad de videojuegos con Next.js, React, Tailwind, shadcn y autenticacion con NextAuth.",
+    stack: ["Next.js", "React", "Tailwind", "shadcn", "NextAuth"],
+    dates: "Julio 2024 - Actualidad",
     imageUrl: "/images/hispanobanner.png",
     website: "https://comunidad-hispano.com",
-    linkedin: "#",
+    highlight: "UX para comunidad y autenticacion",
+  },
+  {
+    company: "Freelance",
+    role: "Desarrollador Web",
+    description:
+      "Sitios a medida para clientes: talleres, entrenadores, restobares y negocios que necesitaban presencia web clara, rapida y administrable.",
+    stack: ["React", "Bootstrap", "Tailwind", "PHP", "SEO", "REST APIs"],
+    dates: "Mayo 2023 - Octubre 2023",
+    imageUrl: "/images/freelancebanner.png",
+    website: "https://tallerdypfenixspa.cl",
+    highlight: "Clientes reales y entregas completas",
+  },
+  {
+    company: "Red de HQS",
+    role: "Desarrollador Front-End",
+    description:
+      "Construccion de sitios corporativos y de reservas, priorizando performance, accesibilidad, SEO y experiencia clara para usuarios finales.",
+    stack: ["React", "Bootstrap", "TypeScript", "HTML", "CSS", "Lighthouse"],
+    dates: "Enero 2023 - Abril 2023",
+    imageUrl: "/images/hqsbanner.png",
+    website: "https://hqsconsultores.cl",
+    highlight: "Web corporativa y reservas",
   },
 ];
 
 const WorkExperience = () => {
   return (
-    <section id="workEx" className="px-6 py-12 md:px-12 lg:px-28 lg:py-16">
-      <div className="text-center mb-10">
-        <div className="flex justify-center items-center gap-4 text-white">
-          <FaGlobe size={40} className="hover:animate-bounce" />
-          <h2 className="text-4xl font-bold uppercase tracking-wide">
-            Experiencia Laboral
+    <section id="workEx" className="bg-[#0b1718] px-5 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#34d399]">
+            Experiencia
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-white sm:text-5xl">
+            Trabajo aplicado en productos, clientes y sistemas internos.
           </h2>
         </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:portrait:grid-cols-2 lg:landscape:grid-cols-4 gap-8 md:gap-12">
-        {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full"
-          >
-            <img
-              src={exp.imageUrl}
-              alt={exp.company}
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
 
-            <div className="flex flex-col flex-grow">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-2xl font-semibold">{exp.company}</h3>
-                <div className="flex gap-2">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {experiences.map((exp) => (
+            <article
+              key={exp.company}
+              className="group grid overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] md:grid-cols-[0.9fr_1.1fr]"
+            >
+              <div className="relative min-h-64">
+                <img
+                  src={exp.imageUrl}
+                  alt={exp.company}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-md bg-[#071013]/85 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#34d399]">
+                  {exp.dates}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-black text-white">
+                      {exp.company}
+                    </h3>
+                    <p className="mt-1 font-semibold text-[#f97316]">
+                      {exp.role}
+                    </p>
+                  </div>
                   <a
                     href={exp.website}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-white/10 bg-white/5 text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                    aria-label={`Abrir sitio de ${exp.company}`}
                   >
-                    <FaGlobe
-                      className="text-blue-500 hover:text-blue-300"
-                      size={20}
-                    />
-                  </a>
-                  <a
-                    href={exp.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaLinkedin
-                      className="text-blue-500 hover:text-blue-300"
-                      size={20}
-                    />
+                    <FaExternalLinkAlt />
                   </a>
                 </div>
+
+                <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-[#34d399]">
+                  {exp.highlight}
+                </p>
+                <p className="mt-4 leading-7 text-slate-300">
+                  {exp.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {exp.stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md bg-[#071013] px-3 py-2 text-sm text-slate-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h4 className="text-xl font-medium text-green-400">{exp.role}</h4>
-              <p className="text-gray-400 mb-4">{exp.description}</p>
-              <ul className="text-gray-400 mb-4 flex-grow">
-                {exp.stack.map((item, idx) => (
-                  <li key={idx} className="mb-1">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-500 mt-auto">{exp.dates}</p>
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
