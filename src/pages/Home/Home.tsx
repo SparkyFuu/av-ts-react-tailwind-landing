@@ -27,7 +27,7 @@ const stackSignals = [
 ];
 
 const socialLinks = [
-  { href: "https://wa.me/", icon: <FaWhatsapp />, label: "WhatsApp" },
+  { href: "https://wa.me/56933544720", icon: <FaWhatsapp />, label: "WhatsApp" },
   {
     href: "https://www.instagram.com/_spark.02_/",
     icon: <FaInstagram />,
@@ -91,7 +91,9 @@ const Home = () => {
               Ver proyectos
             </a>
             <a
-              href="mailto:contacto@alejandrovgallardo.com"
+              href="https://wa.me/56933544720"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-[#1d1d1f] shadow-sm transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
             >
               Hablemos
@@ -122,18 +124,18 @@ const Home = () => {
               alt="Alejandro Valenzuela"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
             />
-            <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/50 bg-white/80 p-4 shadow-lg backdrop-blur-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#6e6e73]">
+            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur-xl sm:bottom-8 sm:left-8 sm:right-8">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1d1d1f] sm:text-sm">
                 Front + Back + Cloud
               </p>
-              <div className="mt-3 grid grid-cols-3 gap-2">
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {stackSignals.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center gap-2 rounded-full bg-[#f5f5f7] px-3 py-2 text-sm text-[#1d1d1f]"
+                    className="flex min-w-0 items-center gap-2 rounded-full bg-white px-3 py-2 text-xs text-[#1d1d1f] shadow-sm sm:text-sm"
                   >
-                    <span className="text-[#0071e3]">{item.icon}</span>
-                    <span>{item.label}</span>
+                    <span className="shrink-0 text-[#0071e3]">{item.icon}</span>
+                    <span className="min-w-0 truncate">{item.label}</span>
                   </div>
                 ))}
               </div>

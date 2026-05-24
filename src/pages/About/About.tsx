@@ -56,7 +56,7 @@ const AboutMe = () => {
                   Lo que hago bien
                 </h3>
                 <p className="text-sm text-[#6e6e73]">
-                  Basado en tu portafolio actual y repos de GitHub.
+                  Basado en mi portafolio.
                 </p>
               </div>
             </div>

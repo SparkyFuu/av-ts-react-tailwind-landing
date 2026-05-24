@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Skills from "../pages/Skills/Skills";
 import WorkExperience from "../pages/Work-Experience/WorkExperience";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import Footer from "../components/footer/Footer";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes: React.FC = () => {
         <Skills />
         <WorkExperience />
         <Portfolio />
+        <Footer />
       </Layout>
     </Router>
   );

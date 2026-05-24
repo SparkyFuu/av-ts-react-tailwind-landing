@@ -15,7 +15,7 @@ const experiences = [
       "Serverless",
     ],
     dates: "Septiembre 2025 - Actualidad",
-    imageUrl: "/images/energyassetweb.jpg",
+    imageUrl: "/images/energyassetportafolio.png",
     website: "https://energyasset.cl",
     highlight: "Tecnologia, producto e infraestructura cloud",
   },
@@ -78,24 +78,24 @@ const WorkExperience = () => {
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {experiences.map((exp) => (
             <article
               key={exp.company}
-              className="group grid overflow-hidden rounded-[2rem] border border-black/10 bg-[#f5f5f7] shadow-sm md:grid-cols-[0.9fr_1.1fr]"
+              className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-[#f5f5f7] shadow-sm"
             >
-              <div className="relative min-h-64 overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-white">
                 <img
                   src={exp.imageUrl}
                   alt={exp.company}
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full bg-white/85 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#1d1d1f] backdrop-blur">
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/28 to-transparent" />
+                <span className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-full bg-white/90 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] backdrop-blur sm:text-xs">
                   {exp.dates}
                 </span>
               </div>
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-2xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">

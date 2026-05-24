@@ -48,7 +48,7 @@ const projects: Array<{
     title: "EnergyAsset Backend Serverless",
     description:
       "Backend NestJS para EnergyAsset desplegable con Serverless Framework, preparado para Lambda/API Gateway, archivos, colas, secretos, correo, reportes y datos relacionales.",
-    image: "/images/energyassetweb.jpg",
+    image: "/images/energyassetportafolio.png",
     type: "backend",
     repo: "https://github.com/SparkyFuu/sls-aws-nest-backend-ea",
     stack: [
@@ -69,7 +69,7 @@ const projects: Array<{
     title: "EnergyAsset Software",
     description:
       "Software web para operacion EnergyAsset, construido como aplicacion React moderna con gestion de estado, reportes PDF, drag and drop, dashboards y consumo de APIs por ambiente.",
-    image: "/images/energyassetweb.jpg",
+    image: "/images/energyassetportafolio.png",
     type: "web",
     link: "https://tups.cl",
     repo: "https://github.com/SparkyFuu/ts-react-front-sw-ea",

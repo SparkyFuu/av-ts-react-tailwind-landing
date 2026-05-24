@@ -6,8 +6,8 @@
   content: "";
   position: absolute;
   inset: auto 0 0;
-  height: 35%;
+  height: 18%;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent, #ffffff);
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.72));
   z-index: 0;
 }
