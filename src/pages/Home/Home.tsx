@@ -26,6 +26,25 @@ const stackSignals = [
   { icon: <FaNodeJs />, label: "Node.js" },
 ];
 
+const socialLinks = [
+  { href: "https://wa.me/", icon: <FaWhatsapp />, label: "WhatsApp" },
+  {
+    href: "https://www.instagram.com/_spark.02_/",
+    icon: <FaInstagram />,
+    label: "Instagram",
+  },
+  {
+    href: "https://github.com/SparkyFuu",
+    icon: <FaGithub />,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/alejandro-valenzuela-8780442a1/",
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+  },
+];
+
 const Home = () => {
   const scrollToNextSection = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
@@ -37,25 +56,25 @@ const Home = () => {
         <img
           src="/images/bg.jpg"
           alt=""
-          className="h-full w-full object-cover opacity-20"
+          className="h-full w-full object-cover opacity-[0.08]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(115deg,#071013_0%,rgba(7,16,19,0.92)_43%,rgba(20,83,45,0.68)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(0,113,227,0.16),transparent_28rem),linear-gradient(180deg,#fbfbfd_0%,#f5f5f7_62%,#ffffff_100%)]" />
       </div>
 
       <div className="relative mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-12 px-5 pb-16 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
         <div className="max-w-3xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#34d399]/30 bg-[#34d399]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#a7f3d0]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#6e6e73] shadow-sm backdrop-blur">
             Disponible para productos web y sistemas internos
           </div>
 
-          <h1 className="text-5xl font-black leading-[0.98] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-[#1d1d1f] sm:text-6xl lg:text-7xl">
             Alejandro Valenzuela
           </h1>
 
-          <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-200">
+          <p className="mt-6 max-w-2xl text-xl leading-8 text-[#424245]">
             Desarrollador full stack en Santiago, Chile. Construyo interfaces
             React limpias, dashboards con datos, APIs en NestJS y despliegues
-            serverless con foco en rendimiento, seguridad y operación real.
+            serverless con foco en rendimiento, seguridad y operacion real.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -67,13 +86,13 @@ const Home = () => {
                   .getElementById("portfolio")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="rounded-md bg-[#34d399] px-5 py-3 text-sm font-black text-[#071013] transition hover:bg-[#6ee7b7]"
+              className="rounded-full bg-[#0071e3] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0077ed]"
             >
               Ver proyectos
             </a>
             <a
               href="mailto:contacto@alejandrovgallardo.com"
-              className="rounded-md border border-white/15 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:border-[#f97316]/60 hover:text-[#fed7aa]"
+              className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-[#1d1d1f] shadow-sm transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
             >
               Hablemos
             </a>
@@ -83,12 +102,12 @@ const Home = () => {
             {proofPoints.map((point) => (
               <div
                 key={point.value}
-                className="border-l-2 border-[#34d399] bg-white/[0.06] p-4 backdrop-blur"
+                className="rounded-2xl border border-black/10 bg-white/80 p-5 shadow-sm backdrop-blur"
               >
-                <strong className="block text-lg text-white">
+                <strong className="block text-lg font-semibold text-[#1d1d1f]">
                   {point.value}
                 </strong>
-                <span className="mt-1 block text-sm text-slate-300">
+                <span className="mt-1 block text-sm leading-6 text-[#6e6e73]">
                   {point.label}
                 </span>
               </div>
@@ -97,23 +116,23 @@ const Home = () => {
         </div>
 
         <div className="relative">
-          <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/40 backdrop-blur">
+          <div className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-white/80 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.12)] backdrop-blur">
             <img
               src="/images/menew.jpg"
               alt="Alejandro Valenzuela"
-              className="aspect-[4/5] w-full rounded-md object-cover"
+              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
             />
-            <div className="absolute bottom-8 left-8 right-8 rounded-md border border-white/10 bg-[#071013]/85 p-4 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#34d399]">
+            <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/50 bg-white/80 p-4 shadow-lg backdrop-blur-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#6e6e73]">
                 Front + Back + Cloud
               </p>
               <div className="mt-3 grid grid-cols-3 gap-2">
                 {stackSignals.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm text-slate-100"
+                    className="flex items-center gap-2 rounded-full bg-[#f5f5f7] px-3 py-2 text-sm text-[#1d1d1f]"
                   >
-                    <span className="text-[#f97316]">{item.icon}</span>
+                    <span className="text-[#0071e3]">{item.icon}</span>
                     <span>{item.label}</span>
                   </div>
                 ))}
@@ -123,31 +142,14 @@ const Home = () => {
 
           <div className="mt-5 flex items-center justify-between gap-4">
             <div className="flex gap-3">
-              {[
-                { href: "https://wa.me/", icon: <FaWhatsapp />, label: "WhatsApp" },
-                {
-                  href: "https://www.instagram.com/_spark.02_/",
-                  icon: <FaInstagram />,
-                  label: "Instagram",
-                },
-                {
-                  href: "https://github.com/SparkyFuu",
-                  icon: <FaGithub />,
-                  label: "GitHub",
-                },
-                {
-                  href: "https://www.linkedin.com/in/alejandro-valenzuela-8780442a1/",
-                  icon: <FaLinkedin />,
-                  label: "LinkedIn",
-                },
-              ].map((social) => (
+              {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="grid h-11 w-11 place-items-center rounded-md border border-white/10 bg-white/10 text-lg text-white transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-white text-lg text-[#1d1d1f] shadow-sm transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
                 >
                   {social.icon}
                 </a>
@@ -156,7 +158,7 @@ const Home = () => {
             <button
               type="button"
               onClick={scrollToNextSection}
-              className="grid h-11 w-11 place-items-center rounded-md border border-[#34d399]/40 bg-[#34d399]/10 text-[#34d399] transition hover:bg-[#34d399] hover:text-[#071013]"
+              className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-[#1d1d1f] text-white shadow-sm transition hover:bg-[#0071e3]"
               aria-label="Explorar el sitio"
             >
               <FaArrowDown />

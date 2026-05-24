@@ -18,7 +18,7 @@ const projects: Array<{
     title: "EnergyAsset Web Multi-Mercado",
     description:
       "Ecosistema de paginas comerciales para EnergyAsset desplegado por mercado, con builds separados, dominios por pais y automatizacion de deploy via SSH/rsync.",
-    image: "/images/evolbanner.png",
+    image: "/images/energyassetweb.jpg",
     type: "web",
     repo: "https://github.com/SparkyFuu/ts-react-front-ea",
     links: [
@@ -48,7 +48,7 @@ const projects: Array<{
     title: "EnergyAsset Backend Serverless",
     description:
       "Backend NestJS para EnergyAsset desplegable con Serverless Framework, preparado para Lambda/API Gateway, archivos, colas, secretos, correo, reportes y datos relacionales.",
-    image: "/images/portfolio-9.jpg",
+    image: "/images/energyassetweb.jpg",
     type: "backend",
     repo: "https://github.com/SparkyFuu/sls-aws-nest-backend-ea",
     stack: [
@@ -69,7 +69,7 @@ const projects: Array<{
     title: "EnergyAsset Software",
     description:
       "Software web para operacion EnergyAsset, construido como aplicacion React moderna con gestion de estado, reportes PDF, drag and drop, dashboards y consumo de APIs por ambiente.",
-    image: "/images/portfolio-8.jpg",
+    image: "/images/energyassetweb.jpg",
     type: "web",
     link: "https://tups.cl",
     repo: "https://github.com/SparkyFuu/ts-react-front-sw-ea",
@@ -90,10 +90,10 @@ const projects: Array<{
     impact: "Herramienta interna enfocada en operacion y datos.",
   },
   {
-    title: "EnergyAsset Front España",
+    title: "EnergyAsset Front Espana",
     description:
       "Frontend/landing para la operacion de EnergyAsset en Espana, construido sobre React, TypeScript y Vite con componentes visuales, carruseles y visualizacion de informacion.",
-    image: "/images/portfolio-5.jpg",
+    image: "/images/energyassetes.jpg",
     type: "web",
     repo: "https://github.com/SparkyFuu/ts-react-front-ea-esp",
     stack: [
@@ -112,7 +112,7 @@ const projects: Array<{
     title: "SEF Landing",
     description:
       "Landing multilenguaje para SEF con deteccion de idioma, traducciones via i18next, secciones visuales, charts y experiencia responsive.",
-    image: "/images/portfolio-6.jpg",
+    image: "/images/sef.jpg",
     type: "web",
     link: "https://santiagoeconomicforum.com",
     repo: "https://github.com/SparkyFuu/ts-react-landing-sef",
@@ -132,7 +132,7 @@ const projects: Array<{
     title: "EnergyAsset Management Software",
     description:
       "Aplicacion de gestion para EnergyAsset Management, con arquitectura frontend moderna, componentes reutilizables, autenticacion, persistencia de estado y flujos pensados para trabajo diario.",
-    image: "/images/portfolio-7.jpg",
+    image: "/images/eam.jpg",
     type: "web",
     repo: "https://github.com/SparkyFuu/ts-react-front-sw-eam",
     stack: [
@@ -153,7 +153,7 @@ const projects: Array<{
     title: "EnergyAsset Management Web",
     description:
       "Pagina web corporativa de EnergyAsset Management, creada para presentar servicios, confianza comercial y contacto de manera clara y responsive.",
-    image: "/images/portfolio-5.jpg",
+    image: "/images/eam.jpg",
     type: "web",
     link: "https://eam.capital",
     repo: "https://github.com/SparkyFuu/ts-react-landing-eam",
@@ -172,7 +172,7 @@ const projects: Array<{
     title: "Hermes Pisos",
     description:
       "Sitio comercial para Hermes Pisos, orientado a mostrar servicios, generar confianza y transformar visitas en solicitudes de contacto.",
-    image: "/images/portfolio-5.jpg",
+    image: "/images/hermespisos.jpg",
     type: "web",
     link: "https://hermespisos.cl",
     repo: "https://github.com/SparkyFuu/ts-react-landing-hermes",
@@ -192,7 +192,7 @@ const projects: Array<{
     title: "Servidor FiveM RP S8",
     description:
       "Programacion de servidor FiveM roleplay para Comunidad Hispano, con scripts de gameplay, logica de servidor, recursos y personalizacion de experiencia in-game.",
-    image: "/images/hispanobanner.png",
+    image: "/images/fivem.jpg",
     type: "app",
     link: "https://comunidad-hispano.com",
     repo: "https://github.com/fsandov/ch-fivem-rp-s8",
@@ -203,7 +203,7 @@ const projects: Array<{
     title: "Hegemonik Backend Serverless",
     description:
       "API NestJS preparada para AWS Lambda con integraciones S3/SQS, JWT, PostgreSQL, Sequelize, procesamiento de CSV/Excel y scripts de deploy por stage.",
-    image: "/images/portfolio-9.jpg",
+    image: "/images/hegemonik.jpg",
     type: "backend",
     repo: "https://github.com/SparkyFuu/sls-aws-nest-backend-hegemonik",
     stack: ["NestJS", "AWS Lambda", "S3", "SQS", "PostgreSQL"],
@@ -213,7 +213,7 @@ const projects: Array<{
     title: "Front TUPS",
     description:
       "Frontend React moderno con Redux Toolkit, Radix UI, Tailwind 4, Recharts, persistencia de estado y consumo de APIs protegidas.",
-    image: "/images/portfolio-8.jpg",
+    image: "/images/tupscl.jpg",
     type: "web",
     link: "https://tups.cl",
     repo: "https://github.com/SparkyFuu/ts-react-front-tups",
@@ -224,7 +224,7 @@ const projects: Array<{
     title: "Front Hegemonik",
     description:
       "Aplicacion React con visualizacion de datos, HLS para video, tus-js-client para cargas resumibles, auth y una base UI orientada a producto.",
-    image: "/images/portfolio-7.jpg",
+    image: "/images/hegemonik.jpg",
     type: "web",
     link: "https://hegemonik.com",
     repo: "https://github.com/SparkyFuu/ts-react-front-hegemonic",
@@ -312,14 +312,14 @@ const Portfolio: React.FC = () => {
   }, [activeFilter]);
 
   return (
-    <section id="portfolio" className="bg-[#071013] px-5 py-24 lg:px-8">
+    <section id="portfolio" className="bg-[#f5f5f7] px-5 py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#34d399]">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6e6e73]">
               Proyectos
             </p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-black text-white sm:text-5xl">
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.035em] text-[#1d1d1f] sm:text-5xl">
               Evidencia concreta: clientes, dashboards, backend cloud y apps.
             </h2>
           </div>
@@ -329,10 +329,10 @@ const Portfolio: React.FC = () => {
                 key={filter.value}
                 type="button"
                 onClick={() => setActiveFilter(filter.value)}
-                className={`rounded-md px-4 py-2 text-sm font-bold transition ${
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   activeFilter === filter.value
-                    ? "bg-[#34d399] text-[#071013]"
-                    : "border border-white/10 bg-white/[0.05] text-slate-200 hover:border-[#34d399]/40"
+                    ? "bg-[#1d1d1f] text-white"
+                    : "border border-black/10 bg-white text-[#424245] shadow-sm hover:border-[#0071e3]/40 hover:text-[#0071e3]"
                 }`}
               >
                 {filter.label}
@@ -345,7 +345,7 @@ const Portfolio: React.FC = () => {
           {visibleProjects.map((project) => (
             <article
               key={project.title}
-              className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]"
+              className="group overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
@@ -353,14 +353,14 @@ const Portfolio: React.FC = () => {
                   alt={project.title}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
-                <span className="absolute left-4 top-4 rounded-md bg-[#071013]/85 px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#34d399]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#1d1d1f] backdrop-blur">
                   {project.type}
                 </span>
               </div>
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-black text-white">
+                  <h3 className="text-2xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">
                     {project.title}
                   </h3>
                   <div className="flex gap-2">
@@ -369,7 +369,7 @@ const Portfolio: React.FC = () => {
                         href={project.repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                        className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-[#f5f5f7] text-[#1d1d1f] transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
                         aria-label={`Repositorio de ${project.title}`}
                       >
                         <FaGithub />
@@ -384,21 +384,21 @@ const Portfolio: React.FC = () => {
                               current === project.title ? null : project.title
                             )
                           }
-                          className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                          className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-[#f5f5f7] text-[#1d1d1f] transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
                           aria-label={`Ver opciones de ${project.title}`}
                           aria-expanded={openLinksFor === project.title}
                         >
                           <FaChevronDown />
                         </button>
                         {openLinksFor === project.title && (
-                          <div className="absolute right-0 top-12 z-20 w-48 rounded-md border border-white/10 bg-[#071013] p-2 shadow-2xl shadow-black/40">
+                          <div className="absolute right-0 top-12 z-20 w-48 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl shadow-black/20">
                             {project.links.map((link) => (
                               <a
                                 key={link.href}
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-bold text-slate-200 transition hover:bg-white/10 hover:text-[#34d399]"
+                                className="flex items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold text-[#424245] transition hover:bg-[#f5f5f7] hover:text-[#0071e3]"
                               >
                                 <span>{link.label}</span>
                                 <FaExternalLinkAlt className="text-xs" />
@@ -413,7 +413,7 @@ const Portfolio: React.FC = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-[#071013] text-slate-100 transition hover:border-[#34d399]/50 hover:text-[#34d399]"
+                        className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-[#f5f5f7] text-[#1d1d1f] transition hover:border-[#0071e3]/40 hover:text-[#0071e3]"
                         aria-label={`Abrir ${project.title}`}
                       >
                         <FaExternalLinkAlt />
@@ -421,17 +421,17 @@ const Portfolio: React.FC = () => {
                     )}
                   </div>
                 </div>
-                <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-[#f97316]">
+                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">
                   {project.impact}
                 </p>
-                <p className="mt-4 leading-7 text-slate-300">
+                <p className="mt-4 leading-7 text-[#424245]">
                   {project.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-md bg-[#0b1718] px-3 py-2 text-sm text-slate-300"
+                      className="rounded-full bg-[#f5f5f7] px-3 py-2 text-sm text-[#424245]"
                     >
                       {item}
                     </span>
