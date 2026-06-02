@@ -120,7 +120,7 @@ const Home = () => {
         <div className="relative">
           <div className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-white/80 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.12)] backdrop-blur">
             <img
-              src="/images/menew.jpg"
+              src="/images/menewnew.jpg"
               alt="Alejandro Valenzuela"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
             />
